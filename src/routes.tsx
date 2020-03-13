@@ -26,29 +26,34 @@ const Loading = () => (
   
   const TestOne = asyncComponent(()=>import(/* webpackChunkName: "TestOne" */ '@/views/test/TestOne'));
   const Login = asyncComponent(() => import(/* webpackChunkName: "Login" */ '@/views/page/Login/index'));
+  const NotFound = asyncComponent(()=>import(/* webpackChunkName: "NotFound" */ '@/views/page/NotFound'));
+  const Home = asyncComponent(()=>import(/* webpackChunkName: "Home" */ '@/views/home'));
   
   interface routeProps extends ConnectInjectIntlPage{
-      resubmitWarn:boolean
+      resubmit:boolean
   }
 
-  const Routes = ({intl:{messages,formatMessage},dispatch,resubmitWarn}:routeProps)=>{
+  const Routes = ({intl:{messages,formatMessage},dispatch,resubmit}:routeProps)=>{
 
     useEffect(()=>{
-      resubmitWarn&&message.warn('Submit multiple times')
-    },[resubmitWarn])
+      resubmit&&message.warn('Submit multiple times')
+    },[resubmit])
 
     return (
       <ConnectedRouter history={history}>
         <Switch>
             <Route exact path="/" render={()=><Redirect to="/login" push />} />
             <Route path="/login" component={Login} />
+            <Route path="/home" component={Home} />
+            <Route path="/404" component={NotFound} />
+            <Route component={NotFound} />
             <Route path="/test1" component={TestOne} />
         </Switch>
       </ConnectedRouter>
     );
   }
 export default injectIntl(connect(
-    ({client:{resubmitWarn}}:GlobalState)=>({
-        resubmitWarn
+    ({client:{resubmit}}:GlobalState)=>({
+        resubmit
     }),
 )(Routes));

@@ -23,12 +23,10 @@ function isAction(obj) {
 //     },
 //   };
 // }
-function resubmitWarn(bool){
+const resubmitWarn=(resubmit)=>{
     return {
         type:type.resubmitWarn,
-        payload:{
-            resubmitWarn:bool
-        }
+        resubmit
     }
 }
 

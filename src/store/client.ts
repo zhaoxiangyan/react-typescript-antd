@@ -36,11 +36,8 @@ const setLanguage = (lang:string) =>{
 
 export interface State {
     lang:string;
-    refresh:boolean;
-    setting_collapsed:boolean;
-    is_mobile:boolean;
     globalLoading:boolean;
-    resubmitWarn:boolean;
+    resubmit:boolean;
 }
 
 export const action = {
@@ -62,11 +59,8 @@ export const reducer = createReducer(
             case 'ja': return 'ja_JP';
             default: return 'ja_JP'; 
         }})(),
-        refresh:false,
-        setting_collapsed:true,
-        is_mobile:false,
         globalLoading:false,
-        resubmitWarn:false
+        resubmit:false
     },
     {
         [type.setLanguage](state,{lang}){
@@ -81,10 +75,10 @@ export const reducer = createReducer(
               ...payload,
             };
         },
-        [type.resubmitWarn](state, { payload }) {
+        [type.resubmitWarn](state,{resubmit}) {
             return {
               ...state,
-              ...payload,
+              resubmit,
             };
         },
     }

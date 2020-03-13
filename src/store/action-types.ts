@@ -2,7 +2,8 @@
 // server
 // 登录
 export const login = 'login';
-
+// token
+export const tokenSave = 'tokenSave';
 
 
 
