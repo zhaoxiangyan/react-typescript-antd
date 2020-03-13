@@ -38,7 +38,9 @@ export interface State {
     lang:string;
     refresh:boolean;
     setting_collapsed:boolean;
-    is_mobile:boolean
+    is_mobile:boolean;
+    globalLoading:boolean;
+    resubmitWarn:boolean;
 }
 
 export const action = {
@@ -62,7 +64,9 @@ export const reducer = createReducer(
         }})(),
         refresh:false,
         setting_collapsed:true,
-        is_mobile:false
+        is_mobile:false,
+        globalLoading:false,
+        resubmitWarn:false
     },
     {
         [type.setLanguage](state,{lang}){
@@ -70,6 +74,18 @@ export const reducer = createReducer(
                 ...state,
                 lang:lang,
             }
-        }
+        },
+        [type.showGlobalLoading](state, { payload }) {
+            return {
+              ...state,
+              ...payload,
+            };
+        },
+        [type.resubmitWarn](state, { payload }) {
+            return {
+              ...state,
+              ...payload,
+            };
+        },
     }
 )

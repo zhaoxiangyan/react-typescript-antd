@@ -4,7 +4,8 @@ import * as serviceWorker from './serviceWorker';
 import {Provider} from 'react-redux';
 import App from './App';
 import {message} from 'antd';
-import store from './store';
+import store from '@/store';
+import '@/axios/mock';
 
 message.config({maxCount:1});
 

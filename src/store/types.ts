@@ -1,12 +1,17 @@
 import { ThunkDispatch, ThunkAction } from 'redux-thunk';
 import {IntlShape} from 'react-intl';
+import {Store} from 'rc-field-form/lib/interface';
+import { AxiosRequestConfig } from 'axios';
 
 export type MyDispatch = ThunkDispatch<any, any, any>;
 export type MyAction = ThunkAction<any, any, any, any>;
+export type MyIntl = IntlShape;
 export interface ConnectInjectIntlPage {
   dispatch: MyDispatch;
   intl:IntlShape
-}
+};
+
+export type FormFinishProp = Store;
 
 export type createReducer = <T>(
     initialState: T,
@@ -44,3 +49,7 @@ export type createReducer = <T>(
       },
     };
   };
+
+  export interface MyRequestOptions extends AxiosRequestConfig {
+    hideError: boolean;
+  }

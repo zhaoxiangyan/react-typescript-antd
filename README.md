@@ -3,6 +3,7 @@
 > - 整合typescript和ant design组件库，支持redux进行数据流管理
 > - 尝试react hook语法
 > - 使用react-intl实现国际化
+> - 使用react-loadable代码分割
 
 
 ## 框架构成

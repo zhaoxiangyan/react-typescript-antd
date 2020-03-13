@@ -6,11 +6,12 @@ import { routerMiddleware } from 'connected-react-router';
 
 import combineReducers from './combine-reducers'
 
+import promiseMiddleware from './promiseMiddleware';
 
-const history = createBrowserHistory();
+export const history = createBrowserHistory();
 // redux 注入操作
 
-const middleware = [routerMiddleware(history),thunk];
+const middleware = [routerMiddleware(history),thunk,promiseMiddleware];
 
 const composeDevtools =  (process.env.NODE_ENV === 'development')?(window as any)['__REDUX_DEVTOOLS_EXTENSION_COMPOSE__'] : compose;
 
