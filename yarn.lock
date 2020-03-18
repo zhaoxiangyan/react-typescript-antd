@@ -1966,10 +1966,10 @@ ansi-styles@^4.0.0, ansi-styles@^4.1.0:
     "@types/color-name" "^1.1.1"
     color-convert "^2.0.1"
 
-antd@^4.0.2:
-  version "4.0.2"
-  resolved "https://registry.npm.taobao.org/antd/download/antd-4.0.2.tgz#84e7356322ef3620a24cee56a281d910178cbd4e"
-  integrity sha1-hOc1YyLvNiCiTO5WooHZEBeMvU4=
+antd@^4.0.3:
+  version "4.0.3"
+  resolved "https://registry.npm.taobao.org/antd/download/antd-4.0.3.tgz?cache=0&sync_timestamp=1584300007933&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fantd%2Fdownload%2Fantd-4.0.3.tgz#b27e5c40fa00f0e60c72f3673c32257293c2540d"
+  integrity sha1-sn5cQPoA8OYMcvNnPDIlcpPCVA0=
   dependencies:
     "@ant-design/icons" "^4.0.0"
     "@ant-design/react-slick" "~0.25.5"
@@ -2000,12 +2000,12 @@ antd@^4.0.2:
     rc-rate "~2.5.1"
     rc-resize-observer "^0.1.0"
     rc-select "~10.0.0"
-    rc-slider "~9.2.1"
+    rc-slider "~9.2.3"
     rc-steps "~3.5.0"
     rc-switch "~1.9.0"
-    rc-table "~7.2.0"
+    rc-table "~7.3.0"
     rc-tabs "~10.0.0"
-    rc-tooltip "~4.0.0"
+    rc-tooltip "~4.0.2"
     rc-tree "~3.0.0"
     rc-tree-select "~3.0.0"
     rc-trigger "~4.0.0"
@@ -7711,6 +7711,11 @@ path-to-regexp@^1.7.0:
   dependencies:
     isarray "0.0.1"
 
+path-to-regexp@^6.1.0:
+  version "6.1.0"
+  resolved "https://registry.npm.taobao.org/path-to-regexp/download/path-to-regexp-6.1.0.tgz#0b18f88b7a0ce0bfae6a25990c909ab86f512427"
+  integrity sha1-Cxj4i3oM4L+uaiWZDJCauG9RJCc=
+
 path-type@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/path-type/-/path-type-2.0.0.tgz#f012ccb8415b7096fc2daa1054c3d72389594c73"
@@ -8598,7 +8603,7 @@ prompts@^2.0.1:
     kleur "^3.0.3"
     sisteransi "^1.0.3"
 
-prop-types@15.x, prop-types@^15.5.0, prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.6, prop-types@^15.5.7, prop-types@^15.5.8, prop-types@^15.5.9, prop-types@^15.6.0, prop-types@^15.6.2, prop-types@^15.7.2:
+prop-types@15.x, prop-types@^15.5.0, prop-types@^15.5.10, prop-types@^15.5.6, prop-types@^15.5.7, prop-types@^15.5.8, prop-types@^15.5.9, prop-types@^15.6.0, prop-types@^15.6.2, prop-types@^15.7.2:
   version "15.7.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
@@ -8967,14 +8972,13 @@ rc-select@~10.0.0:
     rc-virtual-list "^1.0.0"
     warning "^4.0.3"
 
-rc-slider@~9.2.1:
-  version "9.2.2"
-  resolved "https://registry.npm.taobao.org/rc-slider/download/rc-slider-9.2.2.tgz?cache=0&sync_timestamp=1582781270275&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Frc-slider%2Fdownload%2Frc-slider-9.2.2.tgz#852ed38abda337b98aed5ada2090538d98446cc2"
-  integrity sha1-hS7Tir2jN7mK7VraIJBTjZhEbMI=
+rc-slider@~9.2.3:
+  version "9.2.3"
+  resolved "https://registry.npm.taobao.org/rc-slider/download/rc-slider-9.2.3.tgz#b80f03ada71ef3ec35dfcb67d2e0f87d84ce2781"
+  integrity sha1-uA8Drace8+w138tn0uD4fYTOJ4E=
   dependencies:
     babel-runtime "6.x"
     classnames "^2.2.5"
-    prop-types "^15.5.4"
     rc-tooltip "^4.0.0"
     rc-util "^4.0.4"
     shallowequal "^1.1.0"
@@ -8999,10 +9003,10 @@ rc-switch@~1.9.0:
     prop-types "^15.5.6"
     react-lifecycles-compat "^3.0.4"
 
-rc-table@~7.2.0:
-  version "7.2.1"
-  resolved "https://registry.npm.taobao.org/rc-table/download/rc-table-7.2.1.tgz#db0a7dad31f4322b41f130d52a18595895e0bb88"
-  integrity sha1-2wp9rTH0MitB8TDVKhhZWJXgu4g=
+rc-table@~7.3.0:
+  version "7.3.6"
+  resolved "https://registry.npm.taobao.org/rc-table/download/rc-table-7.3.6.tgz?cache=0&sync_timestamp=1584068205430&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Frc-table%2Fdownload%2Frc-table-7.3.6.tgz#3e885f4651a1757ce5ad0ee1c1731f60f07deeea"
+  integrity sha1-PohfRlGhdXzlrQ7hwXMfYPB97uo=
   dependencies:
     classnames "^2.2.5"
     component-classes "^1.2.6"
@@ -9030,10 +9034,17 @@ rc-tabs@~10.0.0:
     resize-observer-polyfill "^1.5.1"
     warning "^4.0.3"
 
-rc-tooltip@^4.0.0, rc-tooltip@~4.0.0:
+rc-tooltip@^4.0.0:
   version "4.0.1"
   resolved "https://registry.npm.taobao.org/rc-tooltip/download/rc-tooltip-4.0.1.tgz?cache=0&sync_timestamp=1582782132860&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Frc-tooltip%2Fdownload%2Frc-tooltip-4.0.1.tgz#e7a800571c5661f80dfd411c13a1dabaa9646d3a"
   integrity sha1-56gAVxxWYfgN/UEcE6HauqlkbTo=
+  dependencies:
+    rc-trigger "^4.0.0"
+
+rc-tooltip@~4.0.2:
+  version "4.0.3"
+  resolved "https://registry.npm.taobao.org/rc-tooltip/download/rc-tooltip-4.0.3.tgz#728b760863643ec2e85827a2e7fb28d961b3b759"
+  integrity sha1-cot2CGNkPsLoWCei5/so2WGzt1k=
   dependencies:
     rc-trigger "^4.0.0"
 

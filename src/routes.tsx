@@ -17,7 +17,7 @@ const Loading = () => (
     </div>
   );
 
-  const asyncComponent = (component:any) => {
+export const asyncComponent = (component:any) => {
     return Loadable({
       loader: component,
       loading: Loading,

@@ -1,5 +1,5 @@
 import {mock} from '../utils';
-import {CRM} from '@/axios/api';
+import {RequestUrl} from '@/axios';
 
 const loginResult = {
     token_type:"Bearer",
@@ -7,4 +7,4 @@ const loginResult = {
     access_token:'eyJFDSsdfdsfjkJDKLFJSLlfjdl'
 }
 
-mock(CRM.login,loginResult)
+mock(RequestUrl.login,loginResult)

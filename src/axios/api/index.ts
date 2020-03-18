@@ -1,5 +1,4 @@
 
-import {CRM} from './crm';
+export {CRM} from './crm';
+export {Test} from './test';
 
-
-export {CRM};

@@ -1,16 +1,48 @@
 import { ThunkDispatch, ThunkAction } from 'redux-thunk';
 import {IntlShape} from 'react-intl';
 import {Store} from 'rc-field-form/lib/interface';
+import { Location } from 'history';
+
+export interface MyLocation extends Location {
+  // query: any;
+}
 
 export type MyDispatch = ThunkDispatch<any, any, any>;
 export type MyAction = ThunkAction<any, any, any, any>;
 export type MyIntl = IntlShape;
 export interface ConnectInjectIntlPage {
   dispatch: MyDispatch;
-  intl:IntlShape
+  intl:IntlShape;
 };
 
 export type FormFinishProp = Store;
+
+export interface PageListParams {
+  page?:number;
+  pageSize?:number;
+  start?:string;
+  end?:string;
+  source?:string;
+  type?:string;
+  keyword_type?:'nickname'|'name'|'mobile'|'email';
+  keyword?:string;
+  [name:string]:any;
+}
+
+export interface PageListResult {
+  loading:boolean;
+  current:number;
+  pageSize:number;
+  total:number;
+  dataSource:any[];
+}
+
+export interface TypeRequestResult {
+  loading:boolean;
+  result:{ [key: string]: any } | { [key: string]: any }[] | null;
+}
+
+
 
 export type createReducer = <T>(
     initialState: T,

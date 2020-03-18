@@ -1,4 +1,5 @@
 import Mock from 'mockjs';
+import {pathToRegexp} from 'path-to-regexp';
 
 const success = {
     is_succ:true,
@@ -26,7 +27,9 @@ const success = {
       ...success,
       data: result,
     };
-    Mock.mock(new RegExp(url), data);
+    // Mock.mock(new RegExp(url), data);
+    // console.log(pathToRegexp(url),new RegExp(url),new RegExp(url,'m'))
+    Mock.mock(new RegExp(url),data)
   }
   
   export { mock, success, token };

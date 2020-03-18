@@ -7,6 +7,8 @@ import {action as serverActions} from '@/store/server';
 import { push } from 'connected-react-router';
 import {Header,Sider} from '@/views/home/layout';
 import styles from '@/views/home/layout/index.module.less';
+import HomeRouter from '@/views/home/layout/HomeRouter';
+import routes from '@/views/home/layout/routes';
 
 const {Content,Footer} = Layout;
 
@@ -30,15 +32,15 @@ const Home =({dispatch}:HomeProps)=>{
 
     return(
         <Layout>
-            <Sider collapsed={collapsed} />
+            <Sider collapsed={collapsed} menus={routes.menus} />
             <Layout className={styles.right_layout}>
                 <Header toggle={()=>setCollapsed(!collapsed)} collapsed={collapsed} />                
-                <div className={styles.right_layout_layout}>
-                    <Content>
-                        <div style={{height:1200}}>Content</div>
+                <Layout className={styles.right_layout_layout}>
+                    <Content className={styles.right_layout_content}>
+                        <HomeRouter routes={routes} />
                     </Content>
                     <Footer className={styles.footer}>Copyright © {new Date().getFullYear()} SVOFX.All rights reserved.</Footer>
-                </div>
+                </Layout>
             </Layout>
         </Layout>
     )

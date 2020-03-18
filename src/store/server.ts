@@ -1,6 +1,6 @@
 import {createReducer} from './types';
 import * as type from './action-types';
-import {api} from '@/axios'
+import api,{RequestUrl} from '@/axios';
 import { push } from 'connected-react-router';
 
 function loginSuccess() {
@@ -23,7 +23,7 @@ function loginSuccess() {
 function login(data:any) {
     return {
         type: type.login,
-        payload: api('post','login',true,data),
+        payload: api('post',RequestUrl.login,true,data),
         nextAction: loginSuccess(),
     }
 }

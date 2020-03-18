@@ -5,7 +5,7 @@ import {connect} from 'react-redux';
 import {UserOutlined,LockOutlined} from '@ant-design/icons';
 import SwitchLanguage from '@/components/page/SwitchLanguage';
 import {ConnectInjectIntlPage,FormFinishProp} from '@/store/types';
-import FormItemInput from '@/components/common/FormItemInput';
+import {FormItemInput} from '@/components/common';
 import {action as serverActions} from '@/store/server';
 
 interface LoginProps extends ConnectInjectIntlPage{
@@ -18,7 +18,7 @@ const Login = ({intl:{messages,formatMessage},dispatch}:LoginProps)=>{
     }
     return(
         <Row className="login" align="middle" justify="center">
-            <Col className="login_box">
+            <div className="login_box">
                 <Row className="login_top" align="middle" justify="space-between">
                     <img src={require('@/assets/img/logo.png')} alt="" />
                     <SwitchLanguage />   
@@ -43,7 +43,7 @@ const Login = ({intl:{messages,formatMessage},dispatch}:LoginProps)=>{
                     />
                     <Button type="primary" htmlType="submit" block>{messages['pages.Login.4']}</Button>
                 </Form>
-            </Col>
+            </div>
         </Row>
     )
 }

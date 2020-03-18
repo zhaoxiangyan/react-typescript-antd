@@ -43,11 +43,22 @@ export default function promiseMiddleware({ dispatch }) {
     action.payload
       .then(
         (result) => {
+          // console.log(result);
           let ret = {
             loading: false,
             status: SUCCESS,
             result,
           };
+          if (result && result.data && result.per_page) {
+            ret = {
+              loading: false,
+              status: SUCCESS,
+              dataSource:result.data,
+              pageSize:result.per_page,
+              current:result.current_page,
+              total:result.total
+            };
+          }
           dispatch({
             ...otherAttr,
             payload: ret,

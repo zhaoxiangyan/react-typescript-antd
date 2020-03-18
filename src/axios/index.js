@@ -3,7 +3,7 @@
  */
 import axios from 'axios';
 import {message} from 'antd';
-import {CRM} from './api';
+import {CRM,Test} from './api';
 
 
 const language = navigator.language||navigator.userLanguage;
@@ -62,32 +62,33 @@ function Error_res(err){
 }
 
 let ajax = '';
-export default function Ajax(type,url,msg,data){
-    return new Promise((resolve,reject)=>{
-        if(msg&&ajax===url){
-            message.warn('Submit multiple times')
-        }else{
-            msg&&(ajax = url);
-            (type==='get'?get({url:CRM[url],data}):post({url:CRM[url],data})).then(res=>{
-                msg&&(ajax = '');
-                if(res&&res.is_succ){
-                    resolve(res.data||res)
-                }else{
-                    message.error(res.message);
-                    data&&reject(res.message||res)
-                }
-            })
-        }
-    })
-}
+// export default function Ajax(type,url,msg,data){
+//     return new Promise((resolve,reject)=>{
+//         if(msg&&ajax===url){
+//             message.warn('Submit multiple times')
+//         }else{
+//             msg&&(ajax = url);
+//             (type==='get'?get({url:CRM[url],data}):post({url:CRM[url],data})).then(res=>{
+//                 msg&&(ajax = '');
+//                 if(res&&res.is_succ){
+//                     resolve(res.data||res)
+//                 }else{
+//                     message.error(res.message);
+//                     data&&reject(res.message||res)
+//                 }
+//             })
+//         }
+//     })
+// }
 
 export const api = (type,url,msg,data)=>{
     return new Promise((resolve,reject)=>{
         if(msg&&ajax===url){
             reject({alert:true})
         }else{
+            if (process.env.NODE_ENV !== 'production') console.log('request options:', {type,url,data});
             msg&&(ajax = url);
-            (type==='get'?get({url:CRM[url],data}):post({url:CRM[url],data})).then(res=>{
+            (type==='get'?get({url,data}):post({url,data})).then(res=>{
                 msg&&(ajax = '');
                 if(res&&res.is_succ){
                     if (process.env.NODE_ENV !== 'production') console.log('request success:', res.data||res);
@@ -101,3 +102,8 @@ export const api = (type,url,msg,data)=>{
         }
     })
 }
+
+export {
+    Test as RequestUrl
+}
+export default api;

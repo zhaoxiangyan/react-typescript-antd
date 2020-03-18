@@ -6,9 +6,10 @@ import SiderMenu from './SiderMenu';
 const {Sider} = Layout;
 
 interface Props{
-    collapsed:boolean
+    collapsed:boolean;
+    menus:any[]
 }
-const SiderComponent = ({collapsed}:Props)=>{
+const SiderComponent = ({collapsed,menus}:Props)=>{
 
     return(
         <Sider
@@ -17,10 +18,9 @@ const SiderComponent = ({collapsed}:Props)=>{
         collapsed={collapsed}
         width="240"
         breakpoint="lg"
-        collapsedWidth="70"
         className={styles.sider}
         >
-            <SiderMenu collapsed={collapsed} />
+            <SiderMenu collapsed={collapsed} menus={menus} />
         </Sider>
     )
 }
